@@ -2,22 +2,22 @@
 
 namespace App\Controller;
 
-use App\Repository\ArticleRepository;
+use App\Entity\Produit;
+use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ListArticleController extends AbstractController
+
+class DetailProduitController extends AbstractController
 {
     /**
-     * @Route("/list/article",name="list_article" , methods={"GET"})
+     * @Route("/detail/produit/{id}", name="detail_produit" , methods={"GET"})
      */
-    public function index(ArticleRepository $articleRepo, SerializerInterface $serializer)
+    public function index(Produit $produit, SerializerInterface $serializer)
     {
-        $articles = $articleRepo->findAll();
-
-        $data = $serializer->serialize($articles, 'json');
+        $data = $serializer->serialize($produit, 'json', SerializationContext::create()->setGroups(['detail']));
 
         $response = new Response();
         $response->setContent($data);
