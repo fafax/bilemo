@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b7ff01a-3f5d-448d-8ff9-00004b899fd0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/api/ListUsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/BileMo_API.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BileMo_API.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AddProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/AddProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DetailProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/DetailProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ListProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/ListProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-    </list>
+    <list default="true" id="823f2667-fcd1-4675-a3bd-18c207080364" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,13 +125,13 @@
     <property name="settings.editor.selected.configurable" value="settings.saveactions" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api" />
-      <recent name="C:\Users\72009\Desktop\BileMo_API\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api" />
       <recent name="C:\Users\72009\Desktop\BileMo_API" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api" />
+      <recent name="C:\Users\72009\Desktop\BileMo_API\src" />
     </key>
   </component>
   <component name="SvnConfiguration">
