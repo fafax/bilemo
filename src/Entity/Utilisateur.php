@@ -35,7 +35,7 @@ class Utilisateur
     private $clientId;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Serializer\Groups({"list"})
      */
     private $url_detail;
@@ -86,7 +86,7 @@ class Utilisateur
         return $this->url_detail;
     }
 
-    public function setUrlDetail(string $url_detail): self
+    public function setUrlDetail(?string $url_detail): self
     {
         $this->url_detail = $url_detail;
 

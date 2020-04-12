@@ -31,7 +31,7 @@ class Produit
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255 ,  nullable=true)
      * @Serializer\Groups({"list"})
      */
     private $urlDetail;
@@ -70,7 +70,7 @@ class Produit
         return $this->urlDetail;
     }
 
-    public function setUrlDetail(string $urlDetail): self
+    public function setUrlDetail(?string $urlDetail): self
     {
         $this->urlDetail = $urlDetail;
 
