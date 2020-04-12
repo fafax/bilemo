@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="823f2667-fcd1-4675-a3bd-18c207080364" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/api/AddUtilisateurController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/api/v1/DeleteUtilisateurController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/api/AddProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/AddProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Produit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Produit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Utilisateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Utilisateur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/AddProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/AddProduitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/AddUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/AddUtilisateurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/DetailProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/DetailProduitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/DetailUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/DetailUtilisateurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/ListProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/ListProduitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/ListUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/ListUtilisateurController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +135,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api\v1" />
       <recent name="C:\Users\72009\Desktop\BileMo_API\src\Repository" />
       <recent name="C:\Users\72009\Desktop\BileMo_API\src\Entity" />
       <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api" />
