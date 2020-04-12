@@ -9,20 +9,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 
-class AddProduitController extends AbstractController
+class AddUtilisateurController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
-     * @Route("/api/v1/add/produit",name="add_produit",  methods={"POST"})
+     * @Route("/api/v1/add/utilisateur", name="add_utilisateur" , methods={"POST"})
      */
-    public function index(Request $request, EntityManagerInterface $em, SerializerInterface $serializer)
+    public function index(Request $request, EntityManagerInterface $em, SerializerInterface $serializer, UserInterface $user)
     {
         $data = $request->getContent();
-        $produit = $serializer->deserialize($data, 'App\Entity\Produit', 'json');
-
-        $em->persist($produit);
+        $utilisateur = $serializer->deserialize($data, 'App\Entity\Utilisateur', 'json');
+        $utilisateur->setClientId($user);
+        $em->persist($utilisateur);
         $em->flush();
 
         return new Response('', Response::HTTP_CREATED);
