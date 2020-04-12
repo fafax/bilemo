@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\api;
+namespace App\Controller\api\v1;
 
 use Doctrine\ORM\EntityManagerInterface;
 use JMS\Serializer\SerializerInterface;
@@ -25,7 +25,8 @@ class AddUtilisateurController extends AbstractController
         $utilisateur->setClientId($user);
         $em->persist($utilisateur);
         $em->flush();
-
-        return new Response('', Response::HTTP_CREATED);
+        $response = new Response('Add utilisateur', Response::HTTP_CREATED);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
     }
 }

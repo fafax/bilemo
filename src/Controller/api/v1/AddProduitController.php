@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\api;
+namespace App\Controller\api\v1;
 
 use Doctrine\ORM\EntityManagerInterface;
 use JMS\Serializer\SerializerInterface;
@@ -25,6 +25,8 @@ class AddProduitController extends AbstractController
         $em->persist($produit);
         $em->flush();
 
-        return new Response('', Response::HTTP_CREATED);
+        $response = new Response('Add produit', Response::HTTP_CREATED);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
     }
 }
