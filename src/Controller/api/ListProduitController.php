@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\api;
 
 use App\Repository\ProduitRepository;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,7 +14,8 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 class ListProduitController extends AbstractController
 {
     /**
-     * @Route("/list/produit",name="list_produit" , methods={"GET"})
+     * @IsGranted("ROLE_USER")
+     * @Route("/api/v1/list/produit",name="list_produit" , methods={"GET"})
      */
     public function index(ProduitRepository $produitRepo, SerializerInterface $serializer)
     {
