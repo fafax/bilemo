@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\api;
 
 use Doctrine\ORM\EntityManagerInterface;
 use JMS\Serializer\SerializerInterface;
@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AddProduitController extends AbstractController
 {
     /**
-     * @Route("/add/produit",name="add_produit",  methods={"POST"})
+     * @Route("/api/v1/add/produit",name="add_produit",  methods={"POST"})
      */
     public function index(Request $request, EntityManagerInterface $em, SerializerInterface $serializer)
     {
