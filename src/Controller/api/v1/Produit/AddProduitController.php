@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\api\v1;
+namespace App\Controller\api\v1\Produit;
 
 use Doctrine\ORM\EntityManagerInterface;
 use JMS\Serializer\SerializerInterface;
@@ -17,7 +17,7 @@ class AddProduitController extends AbstractController
      * @IsGranted("ROLE_USER")
      * @Route("/api/v1/add/produit",name="add_produit",  methods={"POST"})
      */
-    public function index(Request $request, EntityManagerInterface $em, SerializerInterface $serializer)
+    public function __invoke(Request $request, EntityManagerInterface $em, SerializerInterface $serializer)
     {
         $data = $request->getContent();
         $produit = $serializer->deserialize($data, 'App\Entity\Produit', 'json');

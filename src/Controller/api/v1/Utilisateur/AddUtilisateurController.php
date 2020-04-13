@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\api\v1;
+namespace App\Controller\api\v1\Utilisateur;
 
 use Doctrine\ORM\EntityManagerInterface;
 use JMS\Serializer\SerializerInterface;
@@ -18,7 +18,7 @@ class AddUtilisateurController extends AbstractController
      * @IsGranted("ROLE_USER")
      * @Route("/api/v1/add/utilisateur", name="add_utilisateur" , methods={"POST"})
      */
-    public function index(Request $request, EntityManagerInterface $em, SerializerInterface $serializer, UserInterface $user)
+    public function __invoke(Request $request, EntityManagerInterface $em, SerializerInterface $serializer, UserInterface $user)
     {
         $data = $request->getContent();
         $utilisateur = $serializer->deserialize($data, 'App\Entity\Utilisateur', 'json');

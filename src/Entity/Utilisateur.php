@@ -14,12 +14,13 @@ class Utilisateur
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Serializer\Groups({"list"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Serializer\Groups({"list"})
+     * @Serializer\Groups({"list", "detail" })
      */
     private $lastname;
 

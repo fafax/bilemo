@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="823f2667-fcd1-4675-a3bd-18c207080364" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/api/v1/DeleteUtilisateurController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/api/AddProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/AddProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/api/AddUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/AddUtilisateurController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/api/DetailProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/DetailProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/api/DetailUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/DetailUtilisateurController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/api/ListProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/ListProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/api/ListUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/ListUtilisateurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/AddProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Produit/AddProduitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/AddUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Utilisateur/AddUtilisateurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/DeleteUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Utilisateur/DeleteUtilisateurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/DetailProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Produit/DetailProduitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/DetailUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Utilisateur/DetailUtilisateurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/ListProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Produit/ListProduitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/ListUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Utilisateur/ListUtilisateurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Utilisateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Utilisateur.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,16 +135,16 @@
     <property name="settings.editor.selected.configurable" value="settings.saveactions" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api\v1" />
-      <recent name="C:\Users\72009\Desktop\BileMo_API\src\Repository" />
-      <recent name="C:\Users\72009\Desktop\BileMo_API\src\Entity" />
-      <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api" />
-      <recent name="C:\Users\72009\Desktop\BileMo_API\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api" />
       <recent name="C:\Users\72009\Desktop\BileMo_API" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api\v1\Utilisateur" />
+      <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api\v1\Produit" />
+      <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api\v1" />
+      <recent name="C:\Users\72009\Desktop\BileMo_API\src\Repository" />
+      <recent name="C:\Users\72009\Desktop\BileMo_API\src\Entity" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -151,7 +152,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5b7ff01a-3f5d-448d-8ff9-00004b899fd0" name="Default Changelist" comment="" />
+      <changelist id="823f2667-fcd1-4675-a3bd-18c207080364" name="Default Changelist" comment="" />
       <created>1583861820508</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -164,6 +165,7 @@
       <workItem from="1586501818251" duration="15074000" />
       <workItem from="1586617161501" duration="3558000" />
       <workItem from="1586687227275" duration="2832000" />
+      <workItem from="1586794783955" duration="1496000" />
     </task>
     <servers />
   </component>
