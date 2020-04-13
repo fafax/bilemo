@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\api\v1;
+namespace App\Controller\api\v1\Produit;
 
 use App\Entity\Produit;
 use JMS\Serializer\SerializationContext;
@@ -17,7 +17,7 @@ class DetailProduitController extends AbstractController
      * @IsGranted("ROLE_USER")
      * @Route("/api/v1/detail/produit/{id}", name="detail_produit" , methods={"GET"})
      */
-    public function index(Produit $produit, SerializerInterface $serializer)
+    public function __invoke(Produit $produit, SerializerInterface $serializer)
     {
         $data = $serializer->serialize($produit, 'json', SerializationContext::create()->setGroups(['detail']));
 

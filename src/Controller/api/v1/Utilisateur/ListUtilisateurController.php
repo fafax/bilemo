@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\api\v1;
+namespace App\Controller\api\v1\Utilisateur;
 
 
 use App\Repository\UtilisateurRepository;
@@ -19,7 +19,7 @@ class ListUtilisateurController extends AbstractController
      * @IsGranted("ROLE_USER")
      * @Route("/api/v1/list/utilisateur",name="list_utilisateur" , methods={"GET"})
      */
-    public function index(UtilisateurRepository $utilisateurRepo, SerializerInterface $serializer, UserInterface $user)
+    public function __invoke(UtilisateurRepository $utilisateurRepo, SerializerInterface $serializer, UserInterface $user)
     {
         $utilisateurs = $utilisateurRepo->findBy(array('clientId' => $user->getId()));
 
