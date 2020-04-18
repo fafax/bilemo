@@ -36,10 +36,15 @@ class Utilisateur
     private $clientId;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
      * @Serializer\Groups({"list"})
      */
-    private $url_detail;
+    private $urlDetail;
+
+    /**
+     * @Serializer\Groups({"list"})
+     */
+    private $urlDelete;
+
 
     public function getId(): ?int
     {
@@ -84,13 +89,29 @@ class Utilisateur
 
     public function getUrlDetail(): ?string
     {
-        return $this->url_detail;
+        return $this->urlDetail;
     }
 
-    public function setUrlDetail(?string $url_detail): self
+    public function setUrlDetail(?string $urlDetail): self
     {
-        $this->url_detail = $url_detail;
+        $this->urlDetail = $urlDetail;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrlDelete()
+    {
+        return $this->urlDelete;
+    }
+
+    /**
+     * @param mixed $urlDelete
+     */
+    public function setUrlDelete($urlDelete): void
+    {
+        $this->urlDelete = $urlDelete;
     }
 }

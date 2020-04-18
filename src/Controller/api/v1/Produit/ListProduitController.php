@@ -15,24 +15,42 @@ class ListProduitController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
-     * @Route("/api/v1/list/produit",name="list_produit" , methods={"GET"})
+     * @Route("/api/v1/list/produit/{page}",name="list_produit" ,requirements={"page"="\d+"}, methods={"GET"})
      */
-    public function __invoke(ProduitRepository $produitRepo, SerializerInterface $serializer)
+    public function __invoke(ProduitRepository $produitRepo, SerializerInterface $serializer, int $page = 0)
     {
+        $countProduit = count($produitRepo->findAll());
+        $produits = $produitRepo->findBy([], null, 5, $page);
 
-        $produits = $produitRepo->findAll();
 
         foreach ($produits as $produit) {
-            $url = $this->generateUrl('detail_produit', ['id' => $produit->getId()], UrlGeneratorInterface::ABSOLUTE_URL);
-            $produit->setUrlDetail($url);
+            $urlDetail = $this->generateUrl('detail_produit', ['id' => $produit->getId()], UrlGeneratorInterface::ABSOLUTE_URL);
+            $produit->setUrlDetail($urlDetail);
         }
 
-        $data = $serializer->serialize($produits, 'json', SerializationContext::create()->setGroups(['list']));
+        $produits = array_merge($produits, ["Add produit" => $this->generateUrl('add_produit', [], UrlGeneratorInterface::ABSOLUTE_URL)]);
+        $produits = array_merge($produits, $this->linkPagination($page, $countProduit));
 
+        $data = $serializer->serialize($produits, 'json', SerializationContext::create()->setGroups(['list']));
         $response = new Response();
         $response->setContent($data);
         $response->headers->set('Content-Type', 'application/json');
 
         return $response;
+    }
+
+    private function linkPagination($page, $totalPrduit)
+    {
+        $numberPage;
+        $tabLinkPagignation = [];
+
+        if ($page > 0) {
+            $tabLinkPagignation = array_merge($tabLinkPagignation, ["Previous page" => $this->generateUrl('list_produit', ["page" => $numberPage = $page - 5], UrlGeneratorInterface::ABSOLUTE_URL)]);
+        }
+        if ($page + 5 <= $totalPrduit) {
+            $tabLinkPagignation = array_merge($tabLinkPagignation, ["Next page" => $this->generateUrl('list_produit', ["page" => $numberPage = $page + 5], UrlGeneratorInterface::ABSOLUTE_URL)]);
+        }
+
+        return $tabLinkPagignation;
     }
 }
