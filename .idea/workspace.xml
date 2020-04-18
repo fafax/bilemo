@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="823f2667-fcd1-4675-a3bd-18c207080364" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/AddProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Produit/AddProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/AddUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Utilisateur/AddUtilisateurController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/DeleteUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Utilisateur/DeleteUtilisateurController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/DetailProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Produit/DetailProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/DetailUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Utilisateur/DetailUtilisateurController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/ListProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Produit/ListProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/ListUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Utilisateur/ListUtilisateurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/Produit/ListProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Produit/ListProduitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/Utilisateur/ListUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Utilisateur/ListUtilisateurController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Utilisateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Utilisateur.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,9 +15,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -118,14 +112,13 @@
   <component name="ProjectId" id="1Ywm29HmQpP8qxmb72S38V6QFdW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controller/api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -165,31 +158,37 @@
       <workItem from="1586501818251" duration="15074000" />
       <workItem from="1586617161501" duration="3558000" />
       <workItem from="1586687227275" duration="2832000" />
-      <workItem from="1586794783955" duration="1496000" />
+      <workItem from="1586794783955" duration="1861000" />
+      <workItem from="1586796967502" duration="96000" />
+      <workItem from="1587111081278" duration="10972000" />
+      <workItem from="1587197382162" duration="9789000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="310" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586532438431">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="720" y="310" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586532438431" />
+    <state x="740" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1587226042337">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587226042337" />
     <state x="691" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586713345862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -203,10 +202,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586534630756" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1584778779521">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1587132585817">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584778779521" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587132585817" />
     <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1584087677619" />
     <state x="540" y="255" key="IDE.errors.dialog" timestamp="1586708371619">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -217,6 +216,10 @@
     </state>
     <state x="-1186" y="318" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1586502656377" />
     <state x="734" y="318" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586532471931" />
+    <state x="776" y="139" key="RollbackChangesDialog" timestamp="1587197620384">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="776" y="139" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587197620384" />
     <state x="-1373" y="197" key="SettingsEditor" timestamp="1584040476785">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
