@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="823f2667-fcd1-4675-a3bd-18c207080364" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/ValidatorService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/Produit/AddProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Produit/AddProduitController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/Produit/ListProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Produit/ListProduitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/Utilisateur/AddUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Utilisateur/AddUtilisateurController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/api/v1/Utilisateur/ListUtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/v1/Utilisateur/ListUtilisateurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Produit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Produit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Utilisateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Utilisateur.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,6 +110,8 @@
       <path value="$PROJECT_DIR$/vendor/lexik/jwt-authentication-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/validator" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Ywm29HmQpP8qxmb72S38V6QFdW" />
@@ -118,7 +123,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Service" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -128,16 +133,17 @@
     <property name="settings.editor.selected.configurable" value="settings.saveactions" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api" />
-      <recent name="C:\Users\72009\Desktop\BileMo_API" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api\v1\Utilisateur" />
       <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api\v1\Produit" />
       <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api\v1" />
       <recent name="C:\Users\72009\Desktop\BileMo_API\src\Repository" />
       <recent name="C:\Users\72009\Desktop\BileMo_API\src\Entity" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\72009\Desktop\BileMo_API\src\Service" />
+      <recent name="C:\Users\72009\Desktop\BileMo_API\src\Controller\api" />
+      <recent name="C:\Users\72009\Desktop\BileMo_API" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -161,7 +167,11 @@
       <workItem from="1586794783955" duration="1861000" />
       <workItem from="1586796967502" duration="96000" />
       <workItem from="1587111081278" duration="10972000" />
-      <workItem from="1587197382162" duration="9789000" />
+      <workItem from="1587197382162" duration="12335000" />
+      <workItem from="1587723265328" duration="3743000" />
+      <workItem from="1588262513352" duration="2556000" />
+      <workItem from="1588265096196" duration="3480000" />
+      <workItem from="1588322328208" duration="3689000" />
     </task>
     <servers />
   </component>
@@ -194,10 +204,10 @@
     </state>
     <state x="-1229" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584695367249" />
     <state x="691" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586713345862" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586718694274">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1588325311841">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586718694274" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588325311841" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1586534630756">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -211,11 +221,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="255" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586708371619" />
-    <state x="734" y="318" key="NewPhpClassDialog" timestamp="1586532471931">
+    <state x="734" y="318" key="NewPhpClassDialog" timestamp="1588263386320">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1186" y="318" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1586502656377" />
-    <state x="734" y="318" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586532471931" />
+    <state x="734" y="318" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1588263386320" />
     <state x="776" y="139" key="RollbackChangesDialog" timestamp="1587197620384">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -3,6 +3,7 @@
 namespace App\Controller\api\v1\Produit;
 
 use App\Repository\ProduitRepository;
+use App\Service\PaginationService;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -15,10 +16,11 @@ class ListProduitController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
-     * @Route("/api/v1/list/produit/{page}",name="list_produit" ,requirements={"page"="\d+"}, methods={"GET"})
+     * @Route("/api/v1/list/produit/page/{page}",name="list_produit" ,requirements={"page"="\d+"}, methods={"GET"})
      */
-    public function __invoke(ProduitRepository $produitRepo, SerializerInterface $serializer, int $page = 0)
+    public function __invoke(ProduitRepository $produitRepo, SerializerInterface $serializer, int $page = 0, PaginationService $pagination)
     {
+        $page = $page * 5;
         $countProduit = count($produitRepo->findAll());
         $produits = $produitRepo->findBy([], null, 5, $page);
 
@@ -28,10 +30,11 @@ class ListProduitController extends AbstractController
             $produit->setUrlDetail($urlDetail);
         }
 
-        $produits = array_merge($produits, ["Add produit" => $this->generateUrl('add_produit', [], UrlGeneratorInterface::ABSOLUTE_URL)]);
-        $produits = array_merge($produits, $this->linkPagination($page, $countProduit));
+        $tabProduits = ["produits" => $produits];
+        $tabProduits = array_merge($tabProduits, ["Add produit" => $this->generateUrl('add_produit', [], UrlGeneratorInterface::ABSOLUTE_URL)]);
+        $tabProduits = array_merge($tabProduits, $pagination->linkPagination($page, $countProduit, 'list_produit'));
 
-        $data = $serializer->serialize($produits, 'json', SerializationContext::create()->setGroups(['list']));
+        $data = $serializer->serialize($tabProduits, 'json', SerializationContext::create()->setGroups(['list']));
         $response = new Response();
         $response->setContent($data);
         $response->headers->set('Content-Type', 'application/json');
@@ -39,18 +42,5 @@ class ListProduitController extends AbstractController
         return $response;
     }
 
-    private function linkPagination($page, $totalPrduit)
-    {
-        $numberPage;
-        $tabLinkPagignation = [];
 
-        if ($page > 0) {
-            $tabLinkPagignation = array_merge($tabLinkPagignation, ["Previous page" => $this->generateUrl('list_produit', ["page" => $numberPage = $page - 5], UrlGeneratorInterface::ABSOLUTE_URL)]);
-        }
-        if ($page + 5 <= $totalPrduit) {
-            $tabLinkPagignation = array_merge($tabLinkPagignation, ["Next page" => $this->generateUrl('list_produit', ["page" => $numberPage = $page + 5], UrlGeneratorInterface::ABSOLUTE_URL)]);
-        }
-
-        return $tabLinkPagignation;
-    }
 }

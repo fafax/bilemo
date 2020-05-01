@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProduitRepository")
@@ -21,12 +23,14 @@ class Produit
     /**
      * @ORM\Column(type="string", length=255)
      * @Serializer\Groups({"list", "detail" })
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
      * @Serializer\Groups({"list", "detail" })
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $description;
 

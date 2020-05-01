@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UtilisateurRepository")
@@ -21,17 +23,20 @@ class Utilisateur
     /**
      * @ORM\Column(type="string", length=255)
      * @Serializer\Groups({"list", "detail" })
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Serializer\Groups({"list", "detail" })
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $firstname;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="utilisateurs")
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $clientId;
 
