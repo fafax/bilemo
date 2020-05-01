@@ -16,7 +16,7 @@ class ListProduitController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
-     * @Route("/api/v1/list/produit/{page}",name="list_produit" ,requirements={"page"="\d+"}, methods={"GET"})
+     * @Route("/api/v1/list/produit/page/{page}",name="list_produit" ,requirements={"page"="\d+"}, methods={"GET"})
      */
     public function __invoke(ProduitRepository $produitRepo, SerializerInterface $serializer, int $page = 0, PaginationService $pagination)
     {

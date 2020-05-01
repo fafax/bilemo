@@ -18,7 +18,7 @@ class ListUtilisateurController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
-     * @Route("/api/v1/list/utilisateur/{page}",name="list_utilisateur", requirements={"page"="\d+"}, methods={"GET"})
+     * @Route("/api/v1/list/utilisateur/page/{page}",name="list_utilisateur", requirements={"page"="\d+"}, methods={"GET"})
      */
     public function __invoke(UtilisateurRepository $utilisateurRepo, SerializerInterface $serializer, UserInterface $user, int $page = 0, PaginationService $pagination)
     {
@@ -32,11 +32,11 @@ class ListUtilisateurController extends AbstractController
             $urlDelete = $this->generateUrl('delete_utilisateur', ['id' => $utilisateur->getId()], UrlGeneratorInterface::ABSOLUTE_URL);
             $utilisateur->setUrlDelete($urlDelete);
         }
+        $tabUtilisateurs = ["Utilisateurs" => $utilisateurs];
+        $tabUtilisateurs = array_merge($tabUtilisateurs, ["Add utilisateur" => $this->generateUrl('add_utilisateur', [], UrlGeneratorInterface::ABSOLUTE_URL)]);
+        $tabUtilisateurs = array_merge($tabUtilisateurs, $pagination->linkPagination($page, $countUtilisateur, 'list_utilisateur'));
 
-        $utilisateurs = array_merge($utilisateurs, ["Add utilisateur" => $this->generateUrl('add_utilisateur', [], UrlGeneratorInterface::ABSOLUTE_URL)]);
-        $utilisateurs = array_merge($utilisateurs, $pagination->linkPagination($page, $countUtilisateur, 'list_utilisateur'));
-
-        $data = $serializer->serialize($utilisateurs, 'json', SerializationContext::create()->setGroups(['list']));
+        $data = $serializer->serialize($tabUtilisateurs, 'json', SerializationContext::create()->setGroups(['list']));
 
         $response = new Response();
         $response->setContent($data);

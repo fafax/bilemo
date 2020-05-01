@@ -23,20 +23,20 @@ class Utilisateur
     /**
      * @ORM\Column(type="string", length=255)
      * @Serializer\Groups({"list", "detail" })
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Serializer\Groups({"list", "detail" })
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $firstname;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="utilisateurs")
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $clientId;
 

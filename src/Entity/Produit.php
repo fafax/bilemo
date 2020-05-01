@@ -23,14 +23,14 @@ class Produit
     /**
      * @ORM\Column(type="string", length=255)
      * @Serializer\Groups({"list", "detail" })
-     * @Assert\NotBlank(message="Please enter a clever nickname")
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
      * @Serializer\Groups({"list", "detail" })
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $description;
 
