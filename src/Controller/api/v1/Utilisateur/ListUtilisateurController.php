@@ -20,11 +20,12 @@ class ListUtilisateurController extends AbstractController
      * @IsGranted("ROLE_USER")
      * @Route("/api/v1/list/utilisateur/page/{page}",name="list_utilisateur", requirements={"page"="\d+"}, methods={"GET"})
      */
-    public function __invoke(UtilisateurRepository $utilisateurRepo, SerializerInterface $serializer, UserInterface $user, int $page = 0, PaginationService $pagination)
+    public function __invoke(UtilisateurRepository $utilisateurRepo, SerializerInterface $serializer, UserInterface $user, int $page = 1, PaginationService $pagination)
     {
-        $page = $page * 5;
+
+        $entityPerPage = 5;
         $countUtilisateur = count($utilisateurRepo->findBy(array('clientId' => $user->getId())));
-        $utilisateurs = $utilisateurRepo->findBy(array('clientId' => $user->getId()), null, 5, $page);
+        $utilisateurs = $utilisateurRepo->findBy(array('clientId' => $user->getId()), null, $entityPerPage, $page * $entityPerPage - $entityPerPage);
 
         foreach ($utilisateurs as $utilisateur) {
             $urlDetail = $this->generateUrl('detail_utilisateur', ['id' => $utilisateur->getId()], UrlGeneratorInterface::ABSOLUTE_URL);
@@ -34,7 +35,7 @@ class ListUtilisateurController extends AbstractController
         }
         $tabUtilisateurs = ["Utilisateurs" => $utilisateurs];
         $tabUtilisateurs = array_merge($tabUtilisateurs, ["Add utilisateur" => $this->generateUrl('add_utilisateur', [], UrlGeneratorInterface::ABSOLUTE_URL)]);
-        $tabUtilisateurs = array_merge($tabUtilisateurs, $pagination->linkPagination($page, $countUtilisateur, 'list_utilisateur'));
+        $tabUtilisateurs = array_merge($tabUtilisateurs, $pagination->linkPagination($page, $countUtilisateur, 'list_utilisateur', $entityPerPage));
 
         $data = $serializer->serialize($tabUtilisateurs, 'json', SerializationContext::create()->setGroups(['list']));
 

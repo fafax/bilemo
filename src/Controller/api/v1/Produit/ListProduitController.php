@@ -18,11 +18,11 @@ class ListProduitController extends AbstractController
      * @IsGranted("ROLE_USER")
      * @Route("/api/v1/list/produit/page/{page}",name="list_produit" ,requirements={"page"="\d+"}, methods={"GET"})
      */
-    public function __invoke(ProduitRepository $produitRepo, SerializerInterface $serializer, int $page = 0, PaginationService $pagination)
+    public function __invoke(ProduitRepository $produitRepo, SerializerInterface $serializer, int $page = 1, PaginationService $pagination)
     {
-        $page = $page * 5;
+        $entityPerPage = 5;
         $countProduit = count($produitRepo->findAll());
-        $produits = $produitRepo->findBy([], null, 5, $page);
+        $produits = $produitRepo->findBy([], null, $entityPerPage, $page * $entityPerPage - $entityPerPage);
 
 
         foreach ($produits as $produit) {
@@ -32,7 +32,7 @@ class ListProduitController extends AbstractController
 
         $tabProduits = ["produits" => $produits];
         $tabProduits = array_merge($tabProduits, ["Add produit" => $this->generateUrl('add_produit', [], UrlGeneratorInterface::ABSOLUTE_URL)]);
-        $tabProduits = array_merge($tabProduits, $pagination->linkPagination($page, $countProduit, 'list_produit'));
+        $tabProduits = array_merge($tabProduits, $pagination->linkPagination($page, $countProduit, 'list_produit', $entityPerPage));
 
         $data = $serializer->serialize($tabProduits, 'json', SerializationContext::create()->setGroups(['list']));
         $response = new Response();
