@@ -12,12 +12,38 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
+use Nelmio\ApiDocBundle\Annotation\Model;
+use Nelmio\ApiDocBundle\Annotation\Security;
+use Swagger\Annotations as SWG;
+
 class ListProduitController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
      * @Route("/api/v1/list/produit/page/{page}",name="list_produit" ,requirements={"page"="\d+"}, methods={"GET"})
+     * List the rewards of the specified user.
+     *
+     * This call takes into account all confirmed awards, but not pending or refused awards.
+     *
+     *
+     * @SWG\Response(
+     *     response=200,
+     *     description="Returns the list of produit",
+     *     @SWG\Schema(
+     *         type="array",
+     *         @SWG\Items(ref=@Model(type=Produit::class, groups={"list"}))
+     *     )
+     * )
+     * @SWG\Parameter(
+     *     name="page",
+     *     in="query",
+     *     type="integer",
+     *     description="One page contains 5 products"
+     * )
+     * @SWG\Tag(name="Produit")
+     * @Security(name="Bearer")
      */
+
     public function __invoke(ProduitRepository $produitRepo, SerializerInterface $serializer, int $page = 1, PaginationService $pagination)
     {
         $entityPerPage = 5;
