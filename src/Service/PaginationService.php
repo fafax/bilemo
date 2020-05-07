@@ -14,7 +14,7 @@ class PaginationService
         $this->generateUrl = $generateUrl;
     }
 
-    public function linkPagination(int $page, int $totalPrduit, string $list, int $entityPerPage)
+    public function linkPagination(int $page, int $totalEntity, string $list, int $entityPerPage)
     {
         $numberPage = 0;
         $tabLinkPagignation = [];
@@ -22,7 +22,7 @@ class PaginationService
         if ($page > 1) {
             $tabLinkPagignation = array_merge($tabLinkPagignation, ["Previous page" => $this->generateUrl->generate($list, ["page" => $numberPage = $page - 1], UrlGeneratorInterface::ABSOLUTE_URL)]);
         }
-        if ($page * $entityPerPage <= $totalPrduit) {
+        if ($page * $entityPerPage <= $totalEntity) {
             $tabLinkPagignation = array_merge($tabLinkPagignation, ["Next page" => $this->generateUrl->generate($list, ["page" => $numberPage = $page + 1], UrlGeneratorInterface::ABSOLUTE_URL)]);
         }
 
