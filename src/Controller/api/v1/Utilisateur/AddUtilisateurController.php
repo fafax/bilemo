@@ -34,7 +34,7 @@ class AddUtilisateurController extends AbstractController
      * @SWG\Parameter(name="Authorization", in="header", required=true, type="string", default="Bearer accessToken", description="Authorization")
      *
      *
-     * @SWG\Tag(name="Produit")
+     * @SWG\Tag(name="Utilisateur")
      */
     public function __invoke(Request $request, EntityManagerInterface $em, SerializerInterface $serializer, UserInterface $user, ValidatorService $validator)
     {
