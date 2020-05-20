@@ -14,12 +14,37 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+use App\Entity\Utilisateur;
+use Nelmio\ApiDocBundle\Annotation\Model;
+use Swagger\Annotations as SWG;
+
 class ListUtilisateurController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
      * @Route("/api/v1/list/utilisateur/page/{page}",name="list_utilisateur", requirements={"page"="\d+"}, methods={"GET"})
+     *
+     * @SWG\Response(
+     *     response=200,
+     *     description="Returns the list of utiliateur",
+     *     @SWG\Schema(
+     *         @SWG\Items(ref=@Model(type=Utilisateur::class))
+     *     )
+     * )
+     *
+     * @SWG\Parameter(name="Authorization", in="header", required=true, type="string", default="Bearer accessToken", description="Authorization")
+     *
+     * @SWG\Parameter(
+     *     name="page",
+     *     in="path",
+     *     type="integer",
+     *     required=true,
+     *     description="One page contains 5 utilisateurs"
+     * )
+     *
+     * @SWG\Tag(name="Utilisateur")
      */
+
     public function __invoke(UtilisateurRepository $utilisateurRepo, SerializerInterface $serializer, UserInterface $user, int $page = 1, PaginationService $pagination)
     {
 

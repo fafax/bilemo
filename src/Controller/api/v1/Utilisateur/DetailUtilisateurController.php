@@ -11,12 +11,27 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+use Nelmio\ApiDocBundle\Annotation\Model;
+use Swagger\Annotations as SWG;
+
 
 class DetailUtilisateurController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
      * @Route("/api/v1/detail/utilisateur/{id}", name="detail_utilisateur" , methods={"GET"})
+     *
+     * @SWG\Response(
+     *     response=200,
+     *     description="Return one utilisateur",
+     *     @SWG\Schema(
+     *         @SWG\Items(ref=@Model(type=Utilisateur::class))
+     *     )
+     * )
+     *
+     * @SWG\Parameter(name="Authorization", in="header", required=true, type="string", default="Bearer accessToken", description="Authorization")
+     *
+     * @SWG\Tag(name="Utilisateur")
      */
     public function __invoke(Utilisateur $utilisateur, SerializerInterface $serializer, UserInterface $user)
     {
