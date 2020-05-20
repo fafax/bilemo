@@ -12,12 +12,29 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+use App\Entity\Utilisateur;
+use Nelmio\ApiDocBundle\Annotation\Model;
+use Swagger\Annotations as SWG;
+
 
 class AddUtilisateurController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
      * @Route("/api/v1/add/utilisateur", name="add_utilisateur" , methods={"POST"})
+     *
+     * @SWG\Response(
+     *     response=201,
+     *     description="Add one utilisateur",
+     *     @SWG\Schema(
+     *         @SWG\Items(ref=@Model(type=Utilisateur::class))
+     *     )
+     * )
+     *
+     * @SWG\Parameter(name="Authorization", in="header", required=true, type="string", default="Bearer accessToken", description="Authorization")
+     *
+     *
+     * @SWG\Tag(name="Utilisateur")
      */
     public function __invoke(Request $request, EntityManagerInterface $em, SerializerInterface $serializer, UserInterface $user, ValidatorService $validator)
     {

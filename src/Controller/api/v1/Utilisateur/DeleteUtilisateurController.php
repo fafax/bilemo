@@ -10,12 +10,24 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+use Nelmio\ApiDocBundle\Annotation\Model;
+use Swagger\Annotations as SWG;
+
 
 class DeleteUtilisateurController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
      * @Route("/api/v1/delete/utilisateur/{id}", name="delete_utilisateur" , methods={"DELETE"})
+     *
+     * @SWG\Response(
+     *     response=204,
+     *     description="delete one utilisateur",
+     * )
+     *
+     * @SWG\Parameter(name="Authorization", in="header", required=true, type="string", default="Bearer accessToken", description="Authorization")
+     *
+     * @SWG\Tag(name="Utilisateur")
      */
     public function __invoke(Utilisateur $utilisateur, EntityManagerInterface $em, UserInterface $user)
     {
