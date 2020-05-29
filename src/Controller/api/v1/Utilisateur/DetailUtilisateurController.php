@@ -31,6 +31,14 @@ class DetailUtilisateurController extends AbstractController
      *
      * @SWG\Parameter(name="Authorization", in="header", required=true, type="string", default="Bearer accessToken", description="Authorization")
      *
+     * @SWG\Parameter(
+     *     name="id",
+     *     in="path",
+     *     type="integer",
+     *     required=true,
+     *     description="Retrieves utilisateur information based on its id"
+     * )
+     *
      * @SWG\Tag(name="Utilisateur")
      */
     public function __invoke(Utilisateur $utilisateur, SerializerInterface $serializer, UserInterface $user)

@@ -30,6 +30,14 @@ class DetailProduitController extends AbstractController
      *
      * @SWG\Parameter(name="Authorization", in="header", required=true, type="string", default="Bearer accessToken", description="Authorization")
      *
+     * @SWG\Parameter(
+     *     name="id",
+     *     in="path",
+     *     type="integer",
+     *     required=true,
+     *     description="Retrieves produit information based on its id"
+     * )
+     *
      * @SWG\Tag(name="Produit")
      */
     public function __invoke(Produit $produit, SerializerInterface $serializer)

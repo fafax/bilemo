@@ -27,6 +27,14 @@ class DeleteUtilisateurController extends AbstractController
      *
      * @SWG\Parameter(name="Authorization", in="header", required=true, type="string", default="Bearer accessToken", description="Authorization")
      *
+     * @SWG\Parameter(
+     *     name="id",
+     *     in="path",
+     *     type="integer",
+     *     required=true,
+     *     description="Delete this utilisateur data"
+     * )
+     *
      * @SWG\Tag(name="Utilisateur")
      */
     public function __invoke(Utilisateur $utilisateur, EntityManagerInterface $em, UserInterface $user)
