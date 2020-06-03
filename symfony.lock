@@ -179,6 +179,9 @@
             "./config/packages/lexik_jwt_authentication.yaml"
         ]
     },
+    "monolog/monolog": {
+        "version": "2.1.0"
+    },
     "namshi/jose": {
         "version": "7.2.3"
     },
@@ -205,7 +208,7 @@
         "version": "2.7.0"
     },
     "php": {
-        "version": "7.4"
+        "version": "7.3"
     },
     "phpdocumentor/reflection-common": {
         "version": "2.1.0"
@@ -342,6 +345,24 @@
     "symfony/mime": {
         "version": "v5.0.5"
     },
+    "symfony/monolog-bridge": {
+        "version": "v5.0.9"
+    },
+    "symfony/monolog-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "d7249f7d560f6736115eee1851d02a65826f0a56"
+        },
+        "files": [
+            "./config/packages/dev/monolog.yaml",
+            "./config/packages/prod/deprecations.yaml",
+            "./config/packages/prod/monolog.yaml",
+            "./config/packages/test/monolog.yaml"
+        ]
+    },
     "symfony/options-resolver": {
         "version": "v5.0.8"
     },
@@ -356,6 +377,9 @@
     },
     "symfony/polyfill-php73": {
         "version": "v1.14.0"
+    },
+    "symfony/polyfill-php80": {
+        "version": "v1.17.0"
     },
     "symfony/property-access": {
         "version": "v5.0.7"
@@ -457,9 +481,6 @@
     },
     "twig/twig": {
         "version": "v3.0.3"
-    },
-    "webimpress/safe-writer": {
-        "version": "2.0.0"
     },
     "webmozart/assert": {
         "version": "1.8.0"
