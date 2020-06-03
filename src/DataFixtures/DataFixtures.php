@@ -16,16 +16,10 @@ class DataFixtures extends Fixture
     public function __construct(UserPasswordEncoderInterface $encoder)
     {
         $this->encoder = $encoder;
-
     }
 
     public function load(ObjectManager $manager)
     {
-        /*
-
-        /
-         * create user admin
-         */
         $client1 = new User();
 
         $client1->setEmail('admin1@admin.fr');

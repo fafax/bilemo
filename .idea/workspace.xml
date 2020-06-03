@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="823f2667-fcd1-4675-a3bd-18c207080364" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/DataFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/DataFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +152,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9e798870-3e9f-4695-9a4f-5e89a9254587" name="Default Changelist" comment="" />
+      <changelist id="823f2667-fcd1-4675-a3bd-18c207080364" name="Default Changelist" comment="" />
       <created>1589526837699</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -159,6 +161,7 @@
       <workItem from="1589895129336" duration="12631000" />
       <workItem from="1589990942944" duration="20000" />
       <workItem from="1590736326827" duration="648000" />
+      <workItem from="1591209468222" duration="409000" />
     </task>
     <servers />
   </component>
