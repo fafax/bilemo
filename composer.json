@@ -72,7 +72,11 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
+<<<<<<< HEAD
             "require": "5.1.*"
+=======
+            "require": "5.0.*"
+>>>>>>> 1ae4afb59528426ea776b8ea40334b7f92b79aaa
         }
     }
 }
