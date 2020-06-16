@@ -22,7 +22,7 @@ copy .env file and rename this in .env.local
 Change line DATABASE_URL=mysql:// in .env.local file with your setting database
 
     php bin/console doctrine:database:create
-    php bin/console doctrine:migrations:migrate
+    php bin/console doctrine:schema:create
 
 
 ## Set data
@@ -33,6 +33,10 @@ for example data
 ## Start the server
 
 symfony server:start
+
+## Documentaion API
+
+To access the API document, please go to the following address http://127.0.0.1:8000/api/doc
     
 ## How to get an authentication token
 
@@ -50,7 +54,7 @@ With method post http://127.0.0.1:8000/api/login_check with like body
 
 ## Test code climate
    
-[![Maintainability](https://api.codeclimate.com/v1/badges/3019b7fb47b4c56e65a6/maintainability)](https://codeclimate.com/github/fafax/SnowTricks/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a006ca2b05affb70e2d0/maintainability)](https://codeclimate.com/github/fafax/bilemo/maintainability)
 
 ## Stay in touch
 
