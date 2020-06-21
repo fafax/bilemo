@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -39,7 +40,13 @@ class AddUtilisateurController extends AbstractController
     public function __invoke(Request $request, EntityManagerInterface $em, SerializerInterface $serializer, UserInterface $user, ValidatorService $validator)
     {
         $data = $request->getContent();
-        $utilisateur = $serializer->deserialize($data, 'App\Entity\Utilisateur', 'json');
+        try{
+            $utilisateur = $serializer->deserialize($data, 'App\Entity\Utilisateur', 'json');
+        }
+        catch(\Exception $e){
+            throw new BadRequestHttpException($e->getMessage());
+        }
+
         $utilisateur->setClientId($user);
 
         if ($validator->validate($utilisateur)) {
