@@ -7,6 +7,7 @@ use JMS\Serializer\SerializerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
 
@@ -25,9 +26,18 @@ class ApiExceptionSubscriber implements EventSubscriberInterface
         $exception = $event->getThrowable();
 
         //Construct error message
+
+        try{
+            $statusCode = $exception->getStatusCode();
+        }
+        catch(\Exception $e){
+            $statusCode = 500;
+        }
+
+
         $message = ["error" => [
             "message" => $exception->getMessage(),
-            "Status code" => $exception->getStatusCode()
+            "Status code" => $statusCode
         ]];
 
         //format in json
@@ -38,12 +48,14 @@ class ApiExceptionSubscriber implements EventSubscriberInterface
 
         // HttpExceptionInterface is a special type of exception that
         // holds status code and header details
+
         if ($exception instanceof HttpExceptionInterface) {
-            $response->setStatusCode($exception->getStatusCode());
+            $response->setStatusCode($statusCode);
             $response->headers->replace($exception->getHeaders());
-        } else {
+        }else{
             $response->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR);
         }
+
 
         // sends the modified response object to the event
         $event->setResponse($response);

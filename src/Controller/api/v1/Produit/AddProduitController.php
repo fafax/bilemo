@@ -4,11 +4,13 @@ namespace App\Controller\api\v1\Produit;
 
 use App\Service\ValidatorService;
 use Doctrine\ORM\EntityManagerInterface;
+use HttpException;
 use JMS\Serializer\SerializerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 use App\Entity\Produit;
@@ -38,7 +40,12 @@ class AddProduitController extends AbstractController
     public function __invoke(Request $request, EntityManagerInterface $em, SerializerInterface $serializer, ValidatorService $validator)
     {
         $data = $request->getContent();
-        $produit = $serializer->deserialize($data, 'App\Entity\Produit', 'json');
+        try{
+            $produit = $serializer->deserialize($data, 'App\Entity\Produit', 'json');
+        }
+        catch(\Exception $e){
+            throw new BadRequestHttpException($e->getMessage());
+        }
 
         if ($validator->validate($produit)) {
             return $validator->validate($produit);
