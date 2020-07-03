@@ -18,7 +18,7 @@ class DetailProduitController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
-     * @Route("/api/v1/produit/{id}", name="detail_produit" , methods={"GET"})
+     * @Route("/api/v1/produits/{id}", name="detail_produit" , methods={"GET"})
      *
      * @SWG\Response(
      *     response=200,
