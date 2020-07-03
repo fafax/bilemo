@@ -22,7 +22,7 @@ class AddProduitController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
-     * @Route("/api/v1/add/produit",name="add_produit",  methods={"POST"})
+     * @Route("/api/v1/produit",name="add_produit",  methods={"POST"})
      *
      * @SWG\Response(
      *     response=201,

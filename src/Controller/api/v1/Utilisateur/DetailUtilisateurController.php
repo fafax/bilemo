@@ -19,7 +19,7 @@ class DetailUtilisateurController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
-     * @Route("/api/v1/detail/utilisateur/{id}", name="detail_utilisateur" , methods={"GET"})
+     * @Route("/api/v1/utilisateur/{id}", name="detail_utilisateur" , methods={"GET"})
      *
      * @SWG\Response(
      *     response=200,

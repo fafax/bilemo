@@ -18,7 +18,7 @@ class DeleteUtilisateurController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
-     * @Route("/api/v1/delete/utilisateur/{id}", name="delete_utilisateur" , methods={"DELETE"})
+     * @Route("/api/v1/utilisateur/{id}", name="delete_utilisateur" , methods={"DELETE"})
      *
      * @SWG\Response(
      *     response=204,
