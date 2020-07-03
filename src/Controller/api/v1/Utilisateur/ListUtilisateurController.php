@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 use App\Entity\Utilisateur;
 use Nelmio\ApiDocBundle\Annotation\Model;
@@ -22,7 +23,7 @@ class ListUtilisateurController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
-     * @Route("/api/v1/list/utilisateur/page/{page}",name="list_utilisateur", requirements={"page"="\d+"}, methods={"GET"})
+     * @Route("/api/v1/utilisateurs",name="list_utilisateur", requirements={"page"="\d+"}, methods={"GET"})
      *
      * @SWG\Response(
      *     response=200,
@@ -36,7 +37,7 @@ class ListUtilisateurController extends AbstractController
      *
      * @SWG\Parameter(
      *     name="page",
-     *     in="path",
+     *     in="query",
      *     type="integer",
      *     required=true,
      *     description="One page contains 5 utilisateurs"
@@ -45,8 +46,14 @@ class ListUtilisateurController extends AbstractController
      * @SWG\Tag(name="Utilisateur")
      */
 
-    public function __invoke(UtilisateurRepository $utilisateurRepo, SerializerInterface $serializer, UserInterface $user, int $page = 1, PaginationService $pagination)
+    public function __invoke(UtilisateurRepository $utilisateurRepo, SerializerInterface $serializer, UserInterface $user, PaginationService $pagination, Request $request)
     {
+
+        if($request->query->get("page")){
+            $page = (int)$request->query->get("page");
+        }else{
+            $page = 1;
+        }
 
         $entityPerPage = 5;
         $countUtilisateur = count($utilisateurRepo->findBy(array('clientId' => $user->getId())));

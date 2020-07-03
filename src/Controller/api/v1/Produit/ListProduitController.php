@@ -4,6 +4,7 @@ namespace App\Controller\api\v1\Produit;
 
 use App\Repository\ProduitRepository;
 use App\Service\PaginationService;
+use Symfony\Component\HttpFoundation\Request;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -21,7 +22,7 @@ class ListProduitController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
-     * @Route("/api/v1/list/produit/page/{page}",name="list_produit" ,requirements={"page"="\d+"}, methods={"GET"})
+     * @Route("/api/v1/produits", name="list_produit", methods={"GET"})
      *
      *
      * @SWG\Response(
@@ -36,7 +37,7 @@ class ListProduitController extends AbstractController
      *
      * @SWG\Parameter(
      *     name="page",
-     *     in="path",
+     *     in="query",
      *     type="integer",
      *     required=true,
      *     description="One page contains 5 products"
@@ -45,8 +46,14 @@ class ListProduitController extends AbstractController
      * @SWG\Tag(name="Produit")
      */
 
-    public function __invoke(ProduitRepository $produitRepo, SerializerInterface $serializer, int $page = 1, PaginationService $pagination)
+    public function __invoke(ProduitRepository $produitRepo, SerializerInterface $serializer, PaginationService $pagination,Request $request)
     {
+       if($request->query->get("page")){
+           $page = (int)$request->query->get("page");
+       }else{
+           $page = 1;
+       }
+        $page = 1;
         $entityPerPage = 5;
         $countProduit = count($produitRepo->findAll());
         $produits = $produitRepo->findBy([], null, $entityPerPage, $page * $entityPerPage - $entityPerPage);
