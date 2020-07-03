@@ -22,7 +22,7 @@ class AddUtilisateurController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_USER")
-     * @Route("/api/v1/utilisateur", name="add_utilisateur" , methods={"POST"})
+     * @Route("/api/v1/utilisateurs", name="add_utilisateur" , methods={"POST"})
      *
      * @SWG\Response(
      *     response=201,
